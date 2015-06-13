@@ -13,3 +13,13 @@ layout: default
   </article>
 
 </div>
+
+{{page.next.mainBackground}}
+{{page.previous.mainBackground}}
+
+{% if page.next != nil %}
+	<a href="{{page.next.url}}" class="next-link">Older Post</a>
+{% endif %}
+{% if page.previous != nil %}
+	<a href="{{page.previous.url}}" class="previous-link">Newer Post</a>
+{% endif %}
