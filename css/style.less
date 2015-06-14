@@ -2,24 +2,29 @@
 
 * { -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s;  transition: all 0.5s;}
 a { text-decoration: none; color:black;}
-.pure-g [class *="pure-u"] { font-family: 'Yantramanav', sans-serif; font-weight: 400; font-size: 0.9em;}
+.pure-g [class *="pure-u"] { font-size: 0.85em;}
 
-body { overflow-y: scroll; background:#404040; }
+body { overflow-y: scroll;   }
 
 @main-width: 1200px;
 
-header { border-bottom:1px solid #ddd; background: #fff;
+
+header {  background: #fff; box-shadow:0 1px 0 rgba(0,0,0,0.1);
 	.inner {  max-width:@main-width; padding:0 20px; margin:0 auto; height: 70px; line-height: 70px;
-		.search { text-align: right;}		
+		.search { text-align: right;
+			input { border-radius: 20px 0 0 20px; background: #F3F3F3; border: none; padding: 10px 20px 8px 15px; box-shadow: none; height: 32px; line-height: 32px; width: 180px; }
+			button { height: 32px; line-height: 32px; vertical-align: middle; border: none; border-radius: 0 20px 20px 0; background: #F3F3F3; padding:0px 10px 0 0}
+		}		
 		.menu { 
 			.title { background: url(../img/symbol.svg) no-repeat; display: inline-block; height: 0; padding-top: 40px; width: 40px; overflow: hidden; background-size:100%; position: absolute; margin-top: 15px; }
 			.menuList { padding-left: 65px; 
-				a {  letter-spacing: 2px;
-					&:before { content:"l";color:#bbb; padding:0 14px; }
+				a {  letter-spacing: 1px; color:#999; font-weight: 400;font-family: 'Helvetica, Arial', sans-serif !important; font-size: 1em;
+					&:before { content:"|";color:#ccc; font-weight: 100; padding:0 14px; }
 					&:first-child:before { display: none;}
+					&.selected { font-weight: 800; color:black; }
 				}
 			}
-		}
+		} 
 	}
 	.custom-menu-toggle { width: 44px; height: 44px; position: absolute; top: 12px; right: 0; display: none; 
 	    .bar { background-color: black; display: block; width: 20px; height: 2px;  border-radius: 100px;  position: absolute; top: 22px; right: 12px;
@@ -61,11 +66,13 @@ header { border-bottom:1px solid #ddd; background: #fff;
 	header { margin-bottom: 80px;
 		.inner { padding:0;	
 			.menu {
-				.title { left:50%; margin-left: -20px; }
-				.menuList { padding-left: 0px; background: #eee; height: 30px; line-height: 30px; border-top: 1px solid #ccc; text-align: center; opacity: 0;
+				.title { margin-left: 15px;}
+				.menuList { padding-left: 0px; background: #eee; height: 30px; line-height: 30px; border-top: 1px solid #ccc; opacity: 0;
 					&.move { padding-left: 0; margin-top:0; opacity: 1; height: 50px; line-height: 50px;}
+					a:first-child { margin-left: 17px;}
 				}
 			}
+			.search { display: none;}
 		}
 		.custom-menu-toggle {
 			display: block;

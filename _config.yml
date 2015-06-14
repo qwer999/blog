@@ -8,9 +8,8 @@ twitter_username: qwer999
 github_username:  qwer999
 
 # Plugin
-gems: 	["emoji_for_jekyll", "jekyll-auto-image"]
+#gems: 	["emoji_for_jekyll", "jekyll-auto-image"]
 
 # Build settings
 markdown: kramdown
-
 permalink:  /:title
