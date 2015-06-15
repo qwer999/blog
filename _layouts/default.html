@@ -9,15 +9,24 @@
 <html class="no-js" lang=""> 
     {% include head.html %}
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.3&appId=461303117379446";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-            {% include header.html %}
+        {% include header.html %}
 
-        <!-- div class="content">
+        <div class="content">
             {{ content }}
-        </div -->
+        </div>
 
         <footer>           
             {% include footer.html %}
@@ -26,8 +35,8 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="{{ "/js/plugins.js" | prepend: site.baseurl }}"></script>
+        <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

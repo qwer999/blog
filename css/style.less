@@ -1,4 +1,7 @@
+@import (inline) "normalize.min.css";
+@import (inline) "main.css";
 @import (inline) "grid.css";
+
 
 * { -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -ms-transition: all 0.5s;  transition: all 0.5s;}
 a { text-decoration: none; color:black;}
@@ -7,21 +10,23 @@ a { text-decoration: none; color:black;}
 body { overflow-y: scroll;   }
 
 @main-width: 1200px;
+@content-width:900px;
+article.post-content { max-width:@content-width; margin:0 auto; padding:20px;}
 
 
 header {  background: #fff; box-shadow:0 1px 0 rgba(0,0,0,0.1);
 	.inner {  max-width:@main-width; padding:0 20px; margin:0 auto; height: 70px; line-height: 70px;
 		.search { text-align: right;
-			input { border-radius: 20px 0 0 20px; background: #F3F3F3; border: none; padding: 10px 20px 8px 15px; box-shadow: none; height: 32px; line-height: 32px; width: 180px; }
+			input { border-radius: 20px 0 0 20px; background: #F3F3F3; border: none; padding: 0px 20px 0px 15px; box-shadow: none; height: 32px; line-height: 32px; width: 180px; }
 			button { height: 32px; line-height: 32px; vertical-align: middle; border: none; border-radius: 0 20px 20px 0; background: #F3F3F3; padding:0px 10px 0 0}
 		}		
 		.menu { 
 			.title { background: url(../img/symbol.svg) no-repeat; display: inline-block; height: 0; padding-top: 40px; width: 40px; overflow: hidden; background-size:100%; position: absolute; margin-top: 15px; }
 			.menuList { padding-left: 65px; 
-				a {  letter-spacing: 1px; color:#999; font-weight: 400;font-family: 'Helvetica, Arial', sans-serif !important; font-size: 1em;
+				a {  letter-spacing: 2px; color:#999; font-weight: 400;font-family:'Rambla', 'Helvetica', 'Arial', sans-serif !important; font-size: 1.1em;
 					&:before { content:"|";color:#ccc; font-weight: 100; padding:0 14px; }
 					&:first-child:before { display: none;}
-					&.selected { font-weight: 800; color:black; }
+					&.selected { font-weight: 700; color:black; }
 				}
 			}
 		} 
@@ -63,7 +68,7 @@ header {  background: #fff; box-shadow:0 1px 0 rgba(0,0,0,0.1);
 
 
 @media screen and (max-width:40em) { 
-	header { margin-bottom: 80px;
+	header {
 		.inner { padding:0;	
 			.menu {
 				.title { margin-left: 15px;}
@@ -79,4 +84,33 @@ header {  background: #fff; box-shadow:0 1px 0 rgba(0,0,0,0.1);
 			display: none\9;
 		}
 	}
+}
+
+.post-content {
+	img { max-width: 100%;}
+}
+
+.paging { border-top:1px solid #eee; padding:30px 20px; text-align: center;}
+
+.shareBox { border-top:1px solid #eee; padding:0px 20px 20px 20px;
+	.inner {  max-width:@content-width; margin: 0 auto; box-sizing: border-box; min-height: 120px; 
+		h3 { font-size: 0.8em; color:#888; font-weight: 200; }
+		.shareIcon { text-align: right;
+			img { opacity: 0.3;
+				&:hover { opacity: 0.6;}
+			}
+		}
+	}
+
+}
+
+.site-footer { font-size: 0.8em; 
+	div.porfile {	background: #eee; 
+		.inner { max-width:@content-width; padding:20px; margin:0 auto; padding-bottom: 100px;
+			.description { font-size: 0.9em; color:#777; }
+
+		}
+	}
+	.copyright { text-align: center; font-size: 0.6em; color:#777; padding:20px;}
+
 }

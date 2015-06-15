@@ -1,23 +1,64 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col  footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
-      </div>
-
-
-      <div class="footer-col  footer-col-3">
-        <p class="text">{{ site.description }}</p>
-      </div>
+ 
+<div class="shareBox" style="color:black;">
+    <div class="inner pure-g">
+        <h3 class="pure-u-1">Share this!</h3>
+        <div class="pure-u-4-5 pure-u-ss-1">
+            <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="300" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+        </div>
+        <div class="pure-u-1-5 pure-u-ss-1 shareIcon">
+            <img src="{{ "/img/icon_Facebook_bk.svg" | prepend: site.baseurl }}"  />
+            <img src="{{ "/img/icon_Twitter_bk.svg" | prepend: site.baseurl }}"  />
+        </div>
     </div>
+</div>
 
-  </div>
 
+{% if page.previous != nil %}
+    
+    <!-- div class="prev" style="background-image:url('{{page.previous.mainBackground}}'); height:300px; width:100%; background-color:#eee;">
+        <a href="{{page.previous.url}}" class="previous-link">Newer Post</a>
+    </div -->
+{% endif %}
+
+
+
+
+<div class="paging">
+    <div class="inner">
+    {% if page.next != nil %}
+        <a href="{{page.next.url}}" class="next-link">Older Post</a>
+    {% endif %}
+    {% if page.previous != nil %}
+        <a href="{{page.previous.url}}" class="previous-link">Newer Post</a>
+    {% endif %}
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="porfile">
+        <div class="inner">
+            <h3>
+                <a class="link link--primary" href="https://qwer999.net" dir="auto">Qwer999</a>
+            </h3>
+            <p class="description">
+                디자인합니다. 아직 살아 있습니다.<br>
+                App Design, Web Flatform Design, HTML5 + CSS3, Printing
+            </p>
+        </div>
+    </div>
+    <div class="copyright">
+
+        Copyright 2002-2015 Qwer999.net. All rights reserved.<br>
+        Built with Jekyll<br><br>
+        <img src="{{ "/img/jekyll.svg" | prepend: site.baseurl }}" title="jekyll" style="height:40px; width:40px; " /><br>
+    </div>
 </footer>
+
+<script>
+(function (window, document) {
+document.getElementById('toggle').addEventListener('click', function (e) {
+    document.getElementById('toggle').classList.toggle('x');
+    document.getElementById('menuList').classList.toggle('move');
+});
+})(this, this.document);
+</script>
